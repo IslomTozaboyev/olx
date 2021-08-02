@@ -206,7 +206,7 @@ const Home = () => {
           <div className="container pt-5">
             <div className="row">
               {links.map((v) => (
-                <div className="col-12 col-sm-6 col-md-6 col-lg-3 mb-5">
+                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
                   <a className="text-dark w-100 h-100 fw-normal" href={v.link}>
                     <div className="shadow rounded p-2 product h-100">
                       <img
@@ -236,7 +236,7 @@ const Home = () => {
       </div>
       <div className="bizness mt-5 text-white">
         <div className="d-flex justify-content-center">
-          <div className="d-flex justify-content-center align-items-center">
+          <div className="container d-flex justify-content-center align-items-center">
             <img
               className="me-5"
               src="https://static.olx.uz/static/olxuz/packed/font/2fbd23c39bff0aee6c0c84aaf60e66347d.svg"

@@ -29,6 +29,15 @@
 .bizness {
   background-color: #002f34;
 }
+@media screen and (max-width: 800px) {
+  .bizness .container {
+    display: grid !important;
+  }
+  .biznes__btn {
+    margin: 20px 0 !important;
+    padding: 0 !important;
+  }
+}
 .biznes__btn {
   padding: 8px 40px !important;
   border: none;
