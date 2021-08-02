@@ -1,0 +1,27 @@
+.search {
+  background-color: #f2f4f5;
+  padding: 50px;
+}
+.input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.input::placeholder {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.726);
+}
+.form {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .form {
+    display: grid !important;
+    justify-content: space-between !important;
+  }
+  .location {
+    margin-top: 20px;
+  }
+}

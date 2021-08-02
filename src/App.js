@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import Home from "./Pages/Home";
+import Category from "./Pages/Category";
+import MobileApps from "./Pages/MobileApps";
+import Help from "./Pages/Help";
+import Paid from "./Pages/Paid";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/mobileapps" exact component={MobileApps} />
+        <Route path="/Помощь" exact component={Help} />
+        <Route path="/Платные-услуги" exact component={Paid} />
+        <Route path="/:category" component={Category}></Route>
+      </Switch>
     </div>
   );
 }
