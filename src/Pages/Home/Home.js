@@ -181,10 +181,10 @@ const links = [
 
 const Home = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-
+  const { colors } = useContext(ThemeContext);
   return (
     <Container>
-      <HomeWrapper className="container py-5">
+      <HomeWrapper className="container py-5" colors={colors}>
         <h1 className="text-center">Главные категории</h1>
         <div className="row justify-content-center text-center align-items-center">
           <div className="d-flex justify-content-center align-items-center flex-wrap text-center my-5">
@@ -211,7 +211,7 @@ const Home = () => {
             <div className="row">
               {links.map((v) => (
                 <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
-                  <Link to={v.link} className="text-dark w-100 h-100 fw-normal">
+                  <Link to={v.link} className="w-100 h-100 fw-normal link">
                     <div
                       className={`shadow rounded p-2 product h-100 ${theme}`}
                     >

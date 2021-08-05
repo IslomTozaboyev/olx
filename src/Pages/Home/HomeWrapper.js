@@ -62,6 +62,9 @@ const HomeWrapper = styled.div`
       display: none !important;
     }
   }
+  .link {
+    background-color: ${(props) => props.colors.link};
+  }
 `;
 
 export default HomeWrapper;

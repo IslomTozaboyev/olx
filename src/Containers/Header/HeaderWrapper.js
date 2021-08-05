@@ -27,6 +27,7 @@ const HeaderWrapper = styled.header`
       align-items: center !important;
       transition: 0.5s;
       background-color: #000;
+      box-shadow: 0 0 5px ${(props) => props.colors.color};
     }
     .bars {
       display: block;

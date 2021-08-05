@@ -12,7 +12,6 @@ import { Button } from "reactstrap";
 import HeaderWrapper from "./HeaderWrapper";
 import olxLight from "../../img/olxLight.jpg";
 import olxDark from "../../img/olxDark.png";
-import colors from "../../data/colors";
 import { Link } from "react-router-dom";
 
 const Header = () => {
