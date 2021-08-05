@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const HomeWrapper = styled.div`
   .product img {
-    height: 250px;
+    height: 280px;
   }
   .category .circle {
     width: 100px;
@@ -56,6 +56,11 @@ const HomeWrapper = styled.div`
   .olx {
     background-color: #cbf7ee;
     padding: 100px;
+  }
+  @media screen and (max-width: 500px) {
+    .none {
+      display: none !important;
+    }
   }
 `;
 

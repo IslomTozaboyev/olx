@@ -210,7 +210,7 @@ const Home = () => {
           <div className="container pt-5">
             <div className="row">
               {links.map((v) => (
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
+                <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
                   <Link to={v.link} className="text-dark w-100 h-100 fw-normal">
                     <div
                       className={`shadow rounded p-2 product h-100 ${theme}`}
@@ -241,7 +241,7 @@ const Home = () => {
         </div>
       </HomeWrapper>
       <div className="bizness mt-5 text-white">
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center biznes__flex">
           <div className="container d-flex justify-content-center align-items-center">
             <img
               className="me-5"
@@ -249,7 +249,7 @@ const Home = () => {
               alt="rasm"
             />
             <p className="me-5 fs-4">Начните бизнес в интернете с OLX!</p>
-            <button className="btnn p-2">
+            <button className="btnn p-2 d-none d-lg-flex">
               <a className="text-dark" href="https://www.olx.uz/">
                 Подробнее
               </a>
