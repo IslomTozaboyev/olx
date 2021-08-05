@@ -1,8 +1,9 @@
-import "./MobileApps.css";
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../../Containers/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
+import MobileAppsWrapper from "./MobileAppsWrapper";
+import ThemeContext from "../../theme.context";
 
 const list = [
   {
@@ -20,9 +21,10 @@ const list = [
 ];
 
 const MobileApps = () => {
+  const { colors } = useContext(ThemeContext);
   return (
-    <div>
-      <Container>
+    <Container>
+      <MobileAppsWrapper colors={colors}>
         <div className="mobile__footer">
           <div className="container">
             <div className="row mobile__wrapper">
@@ -64,8 +66,8 @@ const MobileApps = () => {
             </div>
           </div>
         </div>
-      </Container>
-    </div>
+      </MobileAppsWrapper>
+    </Container>
   );
 };
 

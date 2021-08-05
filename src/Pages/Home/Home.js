@@ -1,7 +1,9 @@
-import "./Home.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../../Containers/Container";
+import ThemeContext from "../../theme.context";
+import { useContext } from "react";
+import HomeWrapper from "./HomeWrapper";
 
 const data = [
   {
@@ -84,7 +86,7 @@ const links = [
     title: "Detiski kravat My Baby",
     price: "700 000",
     location: "Ташкент, Алмазарский район",
-    link: "http://localhost:3000/detskiy-mir",
+    link: "detskiy-mir",
     subtitle: "Детский мир",
   },
   {
@@ -92,7 +94,7 @@ const links = [
     title: "Ёшленинчида кичик евро ховли сотилади",
     price: "85 000 y.e.",
     location: "Ташкент, Шайхантахурский  район",
-    link: "http://localhost:3000/nevtijimost",
+    link: "nevtijimost",
     subtitle: "Недвижимость",
   },
   {
@@ -100,7 +102,7 @@ const links = [
     title: "Chevrolet Gentra - 3 pozitsia 2019 LT",
     price: "13 000 y.e",
     location: "Ташкент, Шайхантахурский",
-    link: "http://localhost:3000/transport",
+    link: "transport",
     subtitle: "Транспорт",
   },
   {
@@ -108,7 +110,7 @@ const links = [
     title: "Предлагаем услуги Маляров",
     price: "от 1 000 000 сумдо 3 000 000 сум",
     location: "Бухара",
-    link: "http://localhost:3000/rabota",
+    link: "rabota",
     subtitle: "Работа",
   },
   {
@@ -116,7 +118,7 @@ const links = [
     title: "Скоттиш страйт. Девочка",
     price: "500 000 сум",
     location: "Ташкент, Алмазарский район",
-    link: "http://localhost:3000/animal",
+    link: "animal",
     subtitle: "Животные",
   },
   {
@@ -124,7 +126,7 @@ const links = [
     title: "Шикарный диван + пуф!",
     price: "3 800 000 сум ",
     location: "Ташкент, Юнусабадский район",
-    link: "http://localhost:3000/dom",
+    link: "dom",
     subtitle: "Дом и сад",
   },
   {
@@ -132,7 +134,7 @@ const links = [
     title: "Срочно продаю Samsung A80 8GB OZU 128gb память",
     price: "350 y.e ",
     location: "Самарканд",
-    link: "http://localhost:3000/elektronica",
+    link: "elektronica",
     subtitle: "Электроника",
   },
   {
@@ -140,7 +142,7 @@ const links = [
     title: "Бухгалтерский услуги (аутсорсинг )",
     price: "1 000 y.e",
     location: "Ташкент, Алмазарский район",
-    link: "http://localhost:3000/biznes",
+    link: "biznes",
     subtitle: "Бизнес и услуги",
   },
   {
@@ -148,7 +150,7 @@ const links = [
     title: "BN 25 привезли из Европы размеры от 39 до 47.",
     price: "810 000 сум",
     location: "Ташкент, Яккасарайский  район",
-    link: "http://localhost:3000/moda",
+    link: "moda",
     subtitle: "Мода и стиль",
   },
   {
@@ -156,7 +158,7 @@ const links = [
     title: "Комплект тренажёров, штанг и гантелей для зала 120 - 160 кв.м.",
     price: "68 930 000 сум",
     location: "Ташкент, Сергелийский   район",
-    link: "http://localhost:3000/sport",
+    link: "sport",
     subtitle: "Хобби и спорт",
   },
   {
@@ -164,7 +166,7 @@ const links = [
     title: "Отдам в добрые ручки/ мехрибон кулларга топшираман",
     price: "Отдам даром",
     location: "Ташкент, Юнусабадский    район",
-    link: "http://localhost:3000/otdam",
+    link: "otdam",
     subtitle: "Отдам даром",
   },
   {
@@ -172,20 +174,22 @@ const links = [
     title: "spark obmen 2012",
     price: "Обмен",
     location: "Бекабад",
-    link: "http://localhost:3000/obmen",
+    link: "obmen",
     subtitle: "Обмен",
   },
 ];
 
 const Home = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   return (
     <Container>
-      <div className="container py-5">
+      <HomeWrapper className="container py-5">
         <h1 className="text-center">Главные категории</h1>
-        <div className="row">
+        <div className="row justify-content-center text-center align-items-center">
           <div className="d-flex justify-content-center align-items-center flex-wrap text-center my-5">
             {data.map((v) => (
-              <div className="col-lg-2">
+              <div className="col-lg-2 text-center">
                 <Link to={v.to} className="category me-4 text-center">
                   <div className="circle ">
                     <img
@@ -195,7 +199,7 @@ const Home = () => {
                       alt="rasm"
                     />
                   </div>
-                  <p className="text-dark subtitle">{v.title}</p>
+                  <p className={theme}>{v.title}</p>
                 </Link>
               </div>
             ))}
@@ -207,8 +211,10 @@ const Home = () => {
             <div className="row">
               {links.map((v) => (
                 <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
-                  <a className="text-dark w-100 h-100 fw-normal" href={v.link}>
-                    <div className="shadow rounded p-2 product h-100">
+                  <Link to={v.link} className="text-dark w-100 h-100 fw-normal">
+                    <div
+                      className={`shadow rounded p-2 product h-100 ${theme}`}
+                    >
                       <img
                         className="w-100 mb-3 rounded"
                         src={v.img}
@@ -220,7 +226,7 @@ const Home = () => {
                       <br />
                       <span>{v.location}</span>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -233,7 +239,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </HomeWrapper>
       <div className="bizness mt-5 text-white">
         <div className="d-flex justify-content-center">
           <div className="container d-flex justify-content-center align-items-center">
@@ -242,20 +248,22 @@ const Home = () => {
               src="https://static.olx.uz/static/olxuz/packed/font/2fbd23c39bff0aee6c0c84aaf60e66347d.svg"
               alt="rasm"
             />
-            <h5 className="me-5 mb-0">Начните бизнес в интернете с OLX!</h5>
-            <button className="ms-5 mb-0 p-2 biznes__btn">
-              <span>Подробнее</span>
+            <p className="me-5 fs-4">Начните бизнес в интернете с OLX!</p>
+            <button className="btnn p-2">
+              <a className="text-dark" href="https://www.olx.uz/">
+                Подробнее
+              </a>
             </button>
           </div>
         </div>
       </div>
-      <div className="olx text-center">
+      <div className="container olx text-center">
         <img
           className="mb-5"
           src="https://static.olx.uz/static/olxuz/packed/font/2f245edf8d709c906bd6c4b03d1623d647.svg"
           alt=""
         />
-        <p className="">
+        <p className="mt-3">
           Cервис объявлений № 1 в Узбекистане Частные объявления Узбекистана на
           OLX (бывший torg.uz) - здесь вы найдете то, что искали. Нажав на
           кнопку "Подать объявление", вы сможете разместить онлайн-объявление на

@@ -1,9 +1,9 @@
-import "./Help.css";
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-import Header from "../../Containers/Header";
-import Footer from "../../Containers/Footer";
+import Container from "../../Containers/Container";
+import ThemeContext from "../../theme.context";
+import HelpWrapper from "./HelpWrapper";
 
 const data = [
   {
@@ -56,63 +56,65 @@ const data = [
   },
 ];
 
-const Help = () => {
+const Help = (props) => {
+  const { colors } = useContext(ThemeContext);
+
   return (
-    <div>
-      <Header />
-      <section className="hero ">
-        <div className="hero__inner">
-          <h1 className="hero__title mb-4">Чем можем вам помочь?</h1>
-          <h2 className="visitibly__hidden">poisk</h2>
-          <div className="text-center">
-            <form className="position-relative bg-white p-4 w-100" action="">
-              <FontAwesomeIcon className="mb-0" icon={faSearch} />
-              <input
-                className="w-75 border-0 p-0 ms-4"
-                type="text"
-                placeholder="Поиск в Центре поддержки клиентов"
-              />
-            </form>
+    <Container>
+      <HelpWrapper colors={colors}>
+        <section className="hero">
+          <div className="hero__inner">
+            <h1 className="hero__title mb-4 texts">Чем можем вам помочь?</h1>
+            <h2 className="visitibly__hidden">poisk</h2>
+            <div className="text-center">
+              <form className="position-relative bg-white p-4 w-100" action="">
+                <FontAwesomeIcon className="mb-0 texts" icon={faSearch} />
+                <input
+                  className="w-75 border-0 p-0 ms-4"
+                  type="text"
+                  placeholder="Поиск в Центре поддержки клиентов"
+                />
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
-      <div className="bg__blue py-5">
-        <div className="container help_bg d-flex justify-content-between align-items-center  mb-3">
-          <p className="mb-0">
-            Будьте бдительны! Избегайте этих схем обмана! / Ehtiyot bo'ling!
-            Ushbu aldov sxemalaridan qoching!
-          </p>
-          <p className="mb-0">Узнать больше / Batafsil ma‘lumot</p>
-        </div>
-        <div className="container help_bg2 d-flex justify-content-between align-items-center mb-5">
-          <p className="mb-0">
-            Будьте бдительны! Избегайте этих схем обмана! / Ehtiyot bo'ling!
-            Ushbu aldov sxemalaridan qoching!
-          </p>
-          <p className="mb-0">Узнать больше / Batafsil ma‘lumot</p>
-        </div>
-        <div className="container">
-          <div className="row justify-content-center ">
-            {data.map((value, index) => {
-              return (
-                <div className="col-lg-4 mb-5">
-                  <div className="d-flex bg-white align-items-center content__box">
-                    <div className="me-5 img__bg">
-                      <img src={value.icon} alt="rasm" />
-                    </div>
-                    <div className="p-3">
-                      <h5 className="fw-bold">{value.title}</h5>
-                      <p className="text-secondary">{value.subtitle}</p>
+        </section>
+        <div className="bg__blue py-5">
+          <div className="container help_bg d-flex justify-content-between align-items-center  mb-3">
+            <p className="mb-0 texts">
+              Будьте бдительны! Избегайте этих схем обмана! / Ehtiyot bo'ling!
+              Ushbu aldov sxemalaridan qoching!
+            </p>
+            <p className="mb-0 texts">Узнать больше / Batafsil ma‘lumot</p>
+          </div>
+          <div className="container help_bg2 d-flex justify-content-between align-items-center mb-5">
+            <p className="mb-0 texts">
+              Будьте бдительны! Избегайте этих схем обмана! / Ehtiyot bo'ling!
+              Ushbu aldov sxemalaridan qoching!
+            </p>
+            <p className="mb-0 texts">Узнать больше / Batafsil ma‘lumot</p>
+          </div>
+          <div className="container">
+            <div className="row justify-content-center ">
+              {data.map((value, index) => {
+                return (
+                  <div className="col-lg-4 mb-5">
+                    <div className="d-flex border-1 align-items-center content__box h-100">
+                      <div className="me-5 img__bg">
+                        <img className="icon" src={value.icon} alt="rasm" />
+                      </div>
+                      <div className="p-3">
+                        <h5 className="fw-bold">{value.title}</h5>
+                        <p className="text-secondary">{value.subtitle}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-      <Footer />
-    </div>
+      </HelpWrapper>
+    </Container>
   );
 };
 

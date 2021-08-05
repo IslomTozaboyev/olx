@@ -1,9 +1,10 @@
-import "./Paid.css";
 import React, { Component } from "react";
-import Header from "../../Containers/Header";
-import Footer from "../../Containers/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+import ThemeContext from "../../theme.context";
+import Container from "../../Containers/Container";
+import PaidWrapper from "./PaidWrapper";
 
 const data = [
   {
@@ -47,14 +48,14 @@ const box = [
   },
 ];
 
-export default class Paid extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
+const Paid = () => {
+  const { colors } = useContext(ThemeContext);
+  return (
+    <Container>
+      <PaidWrapper colors={colors}>
         <section className="hero">
           <div className="hero__inner">
-            <h1 className="hero__title mb-4">
+            <h1 className="hero__title mb-4 texts">
               Почему стоит рекламировать объявления на OLX?
             </h1>
           </div>
@@ -65,7 +66,7 @@ export default class Paid extends Component {
             <div className="row justify-content-center align-items-center">
               {data.map((value) => (
                 <div className="col-lg-4">
-                  <div className="bg-white text-center p-5 my-5 ">
+                  <div className="text-center p-5 my-5 bg__boxes">
                     <img src={value.img} alt="" />
                     <p className="mt-4 fs-4 fw-bold">{value.title}</p>
                   </div>
@@ -87,7 +88,7 @@ export default class Paid extends Component {
               {box.map((value, index) => {
                 return (
                   <div className="col-lg-4 ">
-                    <div className="bg-white p-5 my-5 ">
+                    <div className="p-5 my-5 bg__boxes">
                       <div className="text-center">
                         <h1>{value.title}</h1>
                         <p className="text-primary">{value.subtitle}</p>
@@ -117,7 +118,7 @@ export default class Paid extends Component {
               </h4>
               <div className="row">
                 <div className="col-lg-6">
-                  <div className="bg-white p-5 my-5">
+                  <div className="bg__boxes p-5 my-5">
                     <h1>Поднятие</h1>
                     <p>
                       По умолчанию объявления на OLX отображаются по дате их
@@ -149,8 +150,9 @@ export default class Paid extends Component {
             </div>
           </div>
         </div>
-        <Footer />
-      </div>
-    );
-  }
-}
+      </PaidWrapper>
+    </Container>
+  );
+};
+
+export default Paid;
