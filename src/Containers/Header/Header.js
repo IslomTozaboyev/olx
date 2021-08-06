@@ -28,7 +28,7 @@ const Header = () => {
   };
 
   return (
-    <HeaderWrapper className={`shadow`} colors={colors}>
+    <HeaderWrapper className="shadow header" colors={colors}>
       <div className="container py-3 d-flex justify-content-between align-items-center">
         <div>
           <div className="d-flex align-items-center">

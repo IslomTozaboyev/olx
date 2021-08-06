@@ -1,8 +1,11 @@
 import styled from "styled-components";
-import colors from "../../data/colors";
 
 const HeaderWrapper = styled.header`
   transition: 0.5s;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
 
   background-color: ${(props) => props.colors.backgroundColor};
   color: ${(props) => props.colors.color};
@@ -16,18 +19,19 @@ const HeaderWrapper = styled.header`
 
   @media screen and (max-width: 1200px) {
     .menu {
-      position: absolute;
-      top: 0px !important;
+      position: fixed;
+      top: 0px;
       right: -150%;
-      width: 70%;
+      width: 240px;
       padding: 20px;
-      height: 10%;
+      height: 100%;
       display: flex;
-      justify-content: center !important;
-      align-items: center !important;
+      flex-direction: column;
+      background-color: #fff;
       transition: 0.5s;
-      background-color: #000;
-      box-shadow: 0 0 5px ${(props) => props.colors.color};
+      background: #000;
+      background-color: ${(props) => props.colors.body};
+      z-index: 1000;
     }
     .bars {
       display: block;
@@ -38,6 +42,18 @@ const HeaderWrapper = styled.header`
       font-weight: bold;
       font-size: 20px;
     }
+    .icon,
+    .button {
+      margin: 40px 25px;
+      color: ${(props) => props.colors.color};
+    }
+    .bars {
+      margin: 0 !important;
+    }
+    .subtitle {
+      margin: 40px;
+    }
+
     .navlink {
       padding: 10px;
       font-size: 16px;
@@ -51,7 +67,7 @@ const HeaderWrapper = styled.header`
   @media screen and (max-width: 900px) {
     .menu {
       position: fixed;
-      top: 70px;
+      top: 0px;
       right: -150%;
       width: 240px;
       padding: 20px;

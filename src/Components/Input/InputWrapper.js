@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const InputWrapper = styled.div`
+  .form__bg {
+    margin-top: 70px !important;
+  }
   .input {
     border: none;
     outline: none;
