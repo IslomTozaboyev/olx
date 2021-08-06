@@ -4,6 +4,8 @@ import Container from "../../Containers/Container";
 import ThemeContext from "../../theme.context";
 import { useContext } from "react";
 import HomeWrapper from "./HomeWrapper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const data = [
   {
@@ -211,10 +213,10 @@ const Home = () => {
             <div className="row">
               {links.map((v) => (
                 <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
-                  <Link to={v.link} className="w-100 h-100 fw-normal link">
-                    <div
-                      className={`shadow rounded p-2 product h-100 ${theme}`}
-                    >
+                  <div
+                    className={`shadow rounded d-flex flex-column justify-content-between p-2 product h-100  link ${theme}`}
+                  >
+                    <Link to={v.link} className="w-100  fw-normal ">
                       <img
                         className="w-100 mb-3 rounded"
                         src={v.img}
@@ -223,10 +225,12 @@ const Home = () => {
                       <p className="fw-bold text-danger">{v.subtitle}</p>
                       <p className="fw-bold">{v.title}</p>
                       <span>{v.price}</span>
-                      <br />
+                    </Link>
+                    <div className="d-flex justify-content-between align-items-center">
                       <span>{v.location}</span>
+                      <FontAwesomeIcon className="" icon={faHeart} />
                     </div>
-                  </Link>
+                  </div>
                 </div>
               ))}
             </div>

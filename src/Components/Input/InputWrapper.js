@@ -10,22 +10,17 @@ const InputWrapper = styled.div`
     box-shadow: none;
     background: transparent;
   }
+
+  .times {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    display: none;
+    transform: translateY(-50%);
+  }
+
   .input::placeholder {
     font-weight: bold;
-  }
-  .form {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-  }
-  @media screen and (max-width: 800px) {
-    .form {
-      display: grid !important;
-      justify-content: space-between !important;
-    }
-    .location {
-      margin-top: 20px;
-    }
   }
 `;
 export default InputWrapper;

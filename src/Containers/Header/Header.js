@@ -48,7 +48,9 @@ const Header = () => {
           }`}
         >
           <p className="me-5 mb-0 subtitle"> oz | ru</p>
-          <FontAwesomeIcon className="me-5 mb-0 icon" icon={faHeart} />
+          <Link to="/favorit">
+            <FontAwesomeIcon className="me-5 mb-0 icon" icon={faHeart} />
+          </Link>
           <FontAwesomeIcon className="me-5 mb-0 icon" icon={faUser} />
           <p className="me-5 mb-0 subtitle">Мой профиль</p>
           <Button color={theme} className="mb-0 me-2 p-2 button">

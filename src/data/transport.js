@@ -5,6 +5,7 @@ const data = [
     price: "40 000 y.e",
     location: "Ташкент, Яккасарайский район ",
     id: 1,
+    like: false,
   },
   {
     img: "https://apollo-olx.cdnvideo.ru/v1/files/t7nrt875hheo3-UZ/image;s=644x461",
@@ -12,6 +13,7 @@ const data = [
     price: "11 000 y.e",
     location: "Ташкент, Алмазарский район ",
     id: 2,
+    like: false,
   },
   {
     img: "https://apollo-olx.cdnvideo.ru/v1/files/kpdfjwtzc3hj2-UZ/image;s=644x461",
@@ -19,6 +21,7 @@ const data = [
     price: "13 000 y.e",
     location: "Ташкент, Шайхантахурский",
     id: 3,
+    like: false,
   },
   {
     img: "https://apollo-olx.cdnvideo.ru/v1/files/2umsjvcoqcmb2-UZ/image;s=644x461",
@@ -26,6 +29,7 @@ const data = [
     price: "135 000 сум",
     location: "Ташкент, Яшнабадский район",
     id: 4,
+    like: false,
   },
   {
     img: "https://apollo-olx.cdnvideo.ru/v1/files/w4s1t42ofous-UZ/image;s=644x461",
@@ -33,6 +37,7 @@ const data = [
     price: "340 000 сум",
     location: "Ташкент, Чиланзарский район ",
     id: 5,
+    like: false,
   },
   {
     img: "https://apollo-olx.cdnvideo.ru/v1/files/ujyts0zagh301-UZ/image;s=644x461",
@@ -40,6 +45,7 @@ const data = [
     price: "12 000 у.е",
     location: "Алмалык ",
     id: 6,
+    like: false,
   },
   {
     img: "https://apollo-olx.cdnvideo.ru/v1/files/qrklg18kw26c3-UZ/image;s=644x461",
@@ -47,6 +53,7 @@ const data = [
     price: "18 000 y.e",
     location: "Янгиюль ",
     id: 7,
+    like: false,
   },
   {
     img: "https://apollo-olx.cdnvideo.ru/v1/files/j4h1f00y1set3-UZ/image;s=644x461",
@@ -54,6 +61,7 @@ const data = [
     price: "369 000 000 сум",
     location: "Ташкент, Сергелийский район ",
     id: 8,
+    like: false,
   },
 ];
 

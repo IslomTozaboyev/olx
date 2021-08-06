@@ -11,6 +11,7 @@ import ThemeContext from "./theme.context";
 import colors from "./data/colors";
 import { useEffect } from "react";
 import Products from "./Pages/Products/Products";
+import Favorit from "./Pages/Favorit/Favorit";
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -32,6 +33,7 @@ function App() {
           <Route path="/mobileapps" exact component={MobileApps} />
           <Route path="/Помощь" exact component={Help} />
           <Route path="/Платные-услуги" exact component={Paid} />
+          <Route path="/favorit" component={Favorit} />
           <Route path="/:category" exact>
             <Category />
           </Route>

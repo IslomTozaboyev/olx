@@ -6,6 +6,7 @@ const HeaderWrapper = styled.header`
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
+  z-index: 10000 !important;
 
   background-color: ${(props) => props.colors.backgroundColor};
   color: ${(props) => props.colors.color};
